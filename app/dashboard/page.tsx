@@ -9,6 +9,10 @@ import {
   LatestInvoicesSkeleton,
   CardsSkeleton,
 } from '@/app/ui/skeletons';
+
+// This page loads live metrics from the database. Prevent static
+// prerendering so those DB queries run only on the server at request time.
+export const dynamic = 'force-dynamic';
  
 export default async function Page() {
   return (

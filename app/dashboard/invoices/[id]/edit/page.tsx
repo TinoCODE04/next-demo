@@ -1,6 +1,10 @@
 import Form from '@/app/ui/invoices/edit-form';
 import Breadcrumbs from '@/app/ui/invoices/breadcrumbs';
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
+
+// This page fetches data from the database; prevent static prerendering
+// so the DB is hit only at request time in the server runtime.
+export const dynamic = 'force-dynamic';
  
 export default async function Page(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
