@@ -9,6 +9,12 @@ import {
   LatestInvoicesSkeleton,
   CardsSkeleton,
 } from '@/app/ui/skeletons';
+import { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'Dashboard | Acme Dashboard',
+};
+
 
 // This page loads live metrics from the database. Prevent static
 // prerendering so those DB queries run only on the server at request time.
